@@ -101,7 +101,7 @@ struct Scene1: View {
                 startTypingEffect()
             }
         } else {
-
+            Scene2().transition(.blurReplace).frame(width: 1250, height: 820)
         }
     }
 

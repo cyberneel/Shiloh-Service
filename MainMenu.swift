@@ -48,7 +48,7 @@ struct MainMenuView: View {
                 }
             }
         } else {
-            Scene1().transition(.blurReplace)
+            Scene1().transition(.blurReplace).frame(width: 1250, height: 820)
         }
     }
 }

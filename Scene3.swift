@@ -1,20 +1,21 @@
 //
-//  Scene2.swift
+//  Scene3.swift
 //  Shiloh Service
 //
-//  Created by Neelesh Chevuri on 2/18/25.
+//  Created by Neelesh Chevuri on 2/19/25.
 //
 
 import AVFoundation
 import SwiftUI
 
-struct Scene2: View {
+struct Scene3: View {
     let storyChunks = [
-        "This is Shiloh Field.",
-        "Have you heard of it before?",
-        "It is the biggest community garden in America!",
-        "They have opportunities almost every day for volunteers to help around the garden or even start their mini garden in their plots.",
-        "Let’s go into the garden and help around!",
+        "Good morning!",
+        "My name is Wade.",
+        "Thank you for coming out to help!",
+        "We are about to plant some potatoes.",
+        "But there are waaay too many weeds in the field.",
+        "Let’s see if we can get rid of them."
     ]
 
     @State private var currentChunkIndex = 0
@@ -28,13 +29,14 @@ struct Scene2: View {
     var body: some View {
         if sceneDone == false {
             ZStack {
-                Image("shiloh-entrance-anime")
-                    .offset(x: 0, y: -0)
-                    .scaleEffect(CGSize(width: 1.2, height: 1.4))
+                Image("pixel-garden-color-weed")
+                    .offset(x: 0, y: -25)
+                    .scaleEffect(CGSize(width: 1.4, height: 1.4))
                 
-                Image("cyberneel")
+                Image("pixel-gardener")
+                    .scaleEffect(CGSize(width: -1, height: 1))
                     .rotationEffect(Angle(degrees: 7))
-                    .offset(x: -490, y: 300)
+                    .offset(x: -450, y: 300)
                     .zIndex(10)
 
                 VStack {
@@ -45,12 +47,12 @@ struct Scene2: View {
                         .foregroundColor(.white)
                         .padding()
                         .multilineTextAlignment(.leading)
-                        .frame(width: 700, height: 200)
+                        .frame(width: 500, height: 200)
                         .background(Color.black.opacity(0.6))
                         .cornerRadius(32)
                         .transition(.opacity)
                         .padding()
-                        .offset(x: -40, y: 325)
+                        .offset(x: -0, y: 325)
 
                     Button(action: {
                         if !isTypingDone {
@@ -79,7 +81,7 @@ struct Scene2: View {
                 startTypingEffect()
             }
         } else {
-            Scene3().transition(.blurReplace)
+            WeedWhacker().transition(.blurReplace)
         }
     }
 
@@ -142,9 +144,8 @@ struct Scene2: View {
     }
 }
 
-struct Scene2View_Previews: PreviewProvider {
+struct Scene3View_Previews: PreviewProvider {
     static var previews: some View {
-        Scene2()
+        Scene3()
     }
 }
-
